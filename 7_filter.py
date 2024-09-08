@@ -23,12 +23,12 @@ class IsAdmin(BaseFilter):
     async def __call__(self, message: Message) -> bool:
         return message.from_user.id in self.admin_ids
 
-
 # # Этот хэндлер будет срабатывать, если апдейт от админа
 # @dp.message(IsAdmin(admin_ids))
 # async def answer_if_admins_update(message: Message):
 #     await message.answer(text='Вы админ')
 
+83832359513
 
 # # Этот хэндлер будет срабатывать, если апдейт не от админа
 # @dp.message()
