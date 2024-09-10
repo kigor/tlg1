@@ -54,15 +54,16 @@ handlers:
     filters: [critical_filter]
 
 loggers:
-  module_1:
-    level: DEBUG
-    handlers: [error_file]
+  # module_1:
+  #   level: DEBUG
+  #   handlers: [error_file]
 
   module_2:
-    handlers: [stdout]
+    level: DEBUG
+    handlers: [error_file, stdout]
 
-  module_3:
-    handlers: [stderr, critical_file]
+  # module_3:
+  #   handlers: [stderr, critical_file]
 
 root:
   formatter: default

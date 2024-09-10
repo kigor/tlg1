@@ -66,4 +66,4 @@ loggers:
 
 root:
   formatter: default
-  handlers: [default]
+  handlers: [default, error_file]
