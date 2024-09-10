@@ -1,0 +1,32 @@
+version: 1
+disable_existing_loggers: True
+
+formatters:
+  default:
+    format: '#%(levelname)-8s %(name)s:%(funcName)s - %(message)s'
+
+filters:
+  exc_filter:
+    (): log_temp.ExcLogFilter
+
+handlers:
+  default:
+    class: logging.StreamHandler
+    formatter: default
+
+  exc_file:
+    class: logging.FileHandler
+    filename: exc_temp.log
+    mode: w
+    level: ERROR
+    filters: [exc_filter]
+    formatter: default
+
+loggers:
+  log_temp:
+    level: ERROR
+    handlers: [exc_file]
+
+root:
+  formatter: default
+  handlers: [default, exc_file]
