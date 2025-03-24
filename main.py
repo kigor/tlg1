@@ -2,6 +2,7 @@ import requests
 import time
 
 
+"""
 API_URL = 'https://api.telegram.org/bot'
 BOT_TOKEN = '7351163387:AAEXCihHtqh1DFyRy081K22qBkSsVb0op-I'
 TEXT = 'Ура! Классный апдейт!'
@@ -35,3 +36,17 @@ while counter < MAX_COUNTER:
                 requests.get(f'{API_URL}{BOT_TOKEN}/sendMessage?chat_id={chat_id}&text={ERROR_TEXT}')
     time.sleep(1)
     counter += 1
+
+"""
+
+from c9_conf_2 import load_config
+
+config = load_config('config_dir/.env')
+
+print('BOT_TOKEN:', config.tg_bot.token)
+print('ADMIN_IDS:', config.tg_bot.admin_ids)
+print()
+print('DATABASE:', config.db.database)
+print('DB_HOST:', config.db.db_host)
+print('DB_USER:', config.db.db_user)
+print('DB_PASSWORD:', config.db.db_password)
