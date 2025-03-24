@@ -12,7 +12,8 @@ from config_data.config import Config, load_config
 # ...
 # Импортируем вспомогательные функции для создания нужных объектов
 # ...
-from keyboards.main_menu import set_main_menu
+
+#from keyboards.main_menu import set_main_menu
 
 # Инициализируем логгер
 logger = logging.getLogger(__name__)
@@ -33,23 +34,23 @@ async def main():
     config: Config = load_config()
 
     # Инициализируем объект хранилища
-    storage = ...
+    #storage = ...
 
     # Инициализируем бот и диспетчер
     bot = Bot(
         token=config.tg_bot.token,
         default=DefaultBotProperties(parse_mode=ParseMode.HTML)
     )
-    dp = Dispatcher(storage=storage)
-
+    #dp = Dispatcher(storage=storage)
+    dp = Dispatcher()
     # Инициализируем другие объекты (пул соединений с БД, кеш и т.п.)
     # ...
 
     # Помещаем нужные объекты в workflow_data диспетчера
-    dp.workflow_data.update(...)
+    #dp.workflow_data.update(...)
 
     # Настраиваем главное меню бота
-    await set_main_menu(bot)
+    #await set_main_menu(bot)
 
     # Регистриуем роутеры
     logger.info('Подключаем роутеры')
